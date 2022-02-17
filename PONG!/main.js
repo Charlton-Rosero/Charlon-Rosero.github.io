@@ -1,6 +1,7 @@
 
 let canvas = document.querySelector('#home');
-
+let player1Score = document.querySelector('#player1-score')
+let player2Score = document.querySelector('#player2-score')
 let context = canvas.getContext('2d');
 
 //***CANVAS WIDTH="600" HEIGHT="800"***//
@@ -10,19 +11,20 @@ const CANVAS_HEIGHT = 800
 const playerWidth = 100
 const playerHeight =10
 
+
 // 2/16/2022
-class Text{
-    constructor(str, x, y){
-      this.str = str;
-      this.x = x ;
-      this.y = y ;  
 
-    }
-    draw(){
+// class Text{
+//     constructor(str, x, y){
+//       this.str = str;
+//       this.x = x ;
+//       this.y = y ;  
 
-    }
-}
+//     }
+//     draw(){
 
+//     }
+// }
 
 
 
@@ -37,6 +39,7 @@ class Ball{  // You're a ball now
         this.xVelocity = 3
         this.yVelocity = 3
 
+
     // player One
       this.width = 100;
       this.height = 10;
@@ -46,8 +49,8 @@ class Ball{  // You're a ball now
       this.score = 0
       addEventListener('keydown', this.keypressed)
       addEventListener('keyup', this.keyrelease)
-
-    //player Two
+    
+      //player Two
         this.p2Width = 100;
         this.p2Height = 10;
         this.player2Speed = 5
@@ -66,22 +69,20 @@ class Ball{  // You're a ball now
         this.Speed()
         context.fillStyle = 'white'
         context.fillRect(this.paddlex, this.paddley, this.width, this.height);
-
-        //player 2
-        
+        player1Score.innerHTML = this.score
+        player2Score.innerHTML = this.p2score
+        //player 2   
         context.fillStyle = 'white'
         context.fillRect(this.p2x, this.p2y, this.p2Width, this.p2Height);
         this.bounce()
-        // console.log(this.player.width)
-      
        
+        // console.log(this.player.width)
     }
-
     bounce(){ 
         this.x += this.xVelocity;
         this.y += this.yVelocity
 
-        if (this.x + this.radius > CANVAS_WIDTH || this.x - this.radius < 0 ){
+        if (this.x + this.radius > CANVAS_WIDTH || this.x - this.radius < 0 ){ // touch walls
             this.xVelocity = -this.xVelocity 
         }
         
@@ -90,7 +91,7 @@ class Ball{  // You're a ball now
                 this.xVelocity = 0;
                 this.yVelocity = 0;
                 this.p2score += 1
-                alert('Player 2 wins')
+                // alert('Player 2 wins')
                 this.resetBall()
        
         }
@@ -98,7 +99,7 @@ class Ball{  // You're a ball now
             this.xVelocity = 0;
             this.yVelocity = 0;
             this.score += 1
-            alert('Player 1 wins')
+            // alert('Player 1 wins')
             this.resetBall()
         }
         
@@ -117,11 +118,10 @@ class Ball{  // You're a ball now
         this.yVelocity = -1* this.yVelocity;
         this.y = this.paddley - this.radius
         
-       }
-    
+        
+    }
        if(ballBottom >= Ppaddle && ballTop <= bottomOfRect &&this.x >= l2Paddle && this.x  <= r2Paddle){//   
         this.yVelocity = -1* this.yVelocity;
-        
         
        }
     }
@@ -203,6 +203,7 @@ class Ball{  // You're a ball now
              case 68:
                  this.pright = true 
              break; 
+             
          
         }
     }   
@@ -224,9 +225,12 @@ class Ball{  // You're a ball now
     }   
     
     resetBall(){
-        // then increment score
+
         this.y = CANVAS_HEIGHT/2 - 7/2
         this.x = CANVAS_WIDTH/2 -7/2
+        this.x += this.xVelocity;
+        this.y += this.yVelocity
+        
     }
 
 }
@@ -245,6 +249,8 @@ function clear(){
      
 }
 setInterval(clear, 11) // GAME SPEED
+
+
 // 2/14/2022 
 // class Paku {
 //     constructor() { 

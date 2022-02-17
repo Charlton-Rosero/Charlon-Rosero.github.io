@@ -1,9 +1,35 @@
+*{
+  margin: 0 auto;
+}
+
 body{
   background-image: url(Images/670491_green-grass-backgrounds-eight_1180x1180_h.jpg)
 }
-
+.container{
+  position: relative;
+}
 #home{
-  border:solid white
+  border:solid white;
+  position: static;
+
+}
+
+#player1-score{
+  font-size: 100px;
+  color: white;
+  position: absolute ;left:700px;top:500px;
   
+}
+#player2-score{
+  font-size: 100px;
+  color: white;
+  position: absolute ;left:700px; top:150px;
+
+}
+p{
+  font-size: 100px;
+  color: white;
+  position: absolute ;left:160px;
+  text-align: center;
 }
 
