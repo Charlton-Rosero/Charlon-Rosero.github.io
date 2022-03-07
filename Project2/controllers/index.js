@@ -1,10 +1,12 @@
 const res = require("express/lib/response");
 const Band = require("../models/band");
 const Member = require("../models/member");
+const Album = require("../models/album");
+// const Song = require("../models/songs");
 
 async function getBand(req, res) {
     try {
-      const band = await Band.find().populate('members','name band_position -_id');
+      const band = await Band.find().populate('members',' lead_guitar rhythm_guitar bass_guitar drums keyboard special_guest -_id').populate('albums','name released albums_sold Label -_id');
       return res.status(200).json({ band });
     } catch (error) {
       return res.status(500).send(error.message);

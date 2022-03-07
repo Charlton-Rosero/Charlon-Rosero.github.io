@@ -4,9 +4,9 @@ const Schema = mongoose.Schema
 
 const Song = new Schema( {
     title: { type: String, required: true },
-    writer:{type: Schema.Types.Array, ref: 'Members'}, // reference a member
+    writer:{type: String, required: true}, 
     runtime:{type:String, required: true},
-    performed_by:{type:String, required: true}
+    singer:{type:String, required: true}
 },
  {timestamps: true},
 )
