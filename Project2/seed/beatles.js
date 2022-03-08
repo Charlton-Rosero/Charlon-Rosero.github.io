@@ -1,7 +1,7 @@
 const db = require(`../db`);
 const Band = require(`../models/band`);
-const Member = require(`../models/member`); // IGNORE FOR NOW
-// const Song = require(`../models/song`)
+const Member = require(`../models/member`); 
+// const Song = require(`../models/song`) // IGNORE FOR NOW
 const Album = require(`../models/album`);
 
 
