@@ -8,6 +8,7 @@ const Band = new Schema( {
     year_formed:{type:String, required: true},
     members:{type: Schema.Types.ObjectId, ref: 'Members'}, // referrence member.js
     albums:{type: Schema.Types.ObjectId, ref: 'Albums'}, // reference album
+    total_albums_sold: {type: String, required: false}
  },
 
  {timestamps: true},

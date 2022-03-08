@@ -8,7 +8,8 @@ const album = new Schema( {
     released:{ type: String, required: true },
     albums_sold:{type: String, required: true},
     Label:{type: String, required: true },
-    // song: {type: Schema.Types.Array, ref: 'Songs'},
+    song: {type: Schema.Types.ObjectId, ref: 'Songs'},
+    
  },
 
  {timestamps: true},

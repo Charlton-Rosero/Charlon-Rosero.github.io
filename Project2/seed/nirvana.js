@@ -8,14 +8,14 @@ db.on(`error`, console.error.bind(console, `MongoDB connection error`));
 
 const main = async () => {
 
-  const album2 = await Album.find({name:`Who's Next`})
+  const album3 = await Album.find({name:`Nevermind`})
     
     const members = await new Member(
       {
-        lead_singer: 'Roger Daltrey',
-        lead_guitar: 'Pete Townshend',
-        bass_guitar:'John Entwistle',
-        drums:'Keith Moon',
+        lead_singer: 'Kurt Cobain',
+        lead_guitar: 'Kurt Cobain',
+        bass_guitar:'Krist Novoselic',
+        drums:'Dave Grohl',
       }
     )
     members.save()
@@ -25,12 +25,12 @@ const main = async () => {
 
     const band = [
       {
-        name: 'The Who',
-        Genre:'Classic Rock',
-        year_formed:'1964',
+        name: 'Nirvana',
+        Genre:'Punk Rock',
+        year_formed:'1987',
         members: members._id,
-        albums: album2[0]._id,
-        total_albums_sold: '100 million'
+        albums: album3[0]._id,
+        total_albums_sold: '75 million'
       },
     ];
     await Band.insertMany(band);
