@@ -15,6 +15,6 @@ router.get(`/member`, controllers.getMember);
 router.put(`/band/:id`, controllers.updateBand);
 router.put(`/album/:id`, controllers.updateAlbum);
 router.delete(`/band/:name`, controllers.deleteAll);
-
+router.delete(`/band/:id`, controllers.deleteById);
 
 module.exports = router;

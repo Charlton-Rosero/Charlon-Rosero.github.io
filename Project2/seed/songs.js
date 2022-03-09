@@ -38,9 +38,6 @@ const main = async () => {
     await Song.insertMany(song);
     console.log(`We hope you will enjoy the show`);
 
-
-
-
    
 };
 

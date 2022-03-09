@@ -98,7 +98,7 @@ async function getBand(req, res) {
   const updateAlbum =  (req, res) => {
     try {
       const { id } = req.params
-     Album.findByIdAndUpdate(id, req.body, { new: true }, (err, recipe) => {
+     Album.findByIdAndUpdate(id, req.body, { new: true }, (err, band) => {
        
         if (err !== null) {
           console.log(err, 'error')
@@ -110,6 +110,15 @@ async function getBand(req, res) {
       })
     } catch (error) {
      return  res.status(500).send(error.message)
+    }
+  }
+  
+  async function deleteById (req, res) {
+    try {
+      const {_id} = await Band.findByIdAndDelete(req.params._id);
+        return res.status(200).send(`deleted Band`);
+    } catch (error) {
+      return res.status(500).send(error.message);
     }
   }
 
@@ -138,6 +147,7 @@ async function getBand(req, res) {
     createBand,
     createSong,
     createAlbum,
-    createMember
+    createMember,
+    deleteById
    
   };
