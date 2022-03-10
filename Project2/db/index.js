@@ -1,9 +1,11 @@
 const mongoose = require('mongoose')
+const dotenv = require("dotenv")
+dotenv.config();
 
-let MONGODB_URI =process.env.PROD_MONGODB ||process.env.MONGODB_URI ||`mongodb://127.0.0.1:27017/project2`;
+//let MONGODB_URI =process.env.PROD_MONGODB ||process.env.MONGODB_URI ||`mongodb://127.0.0.1:27017/project2`;
 
 
-mongoose.connect(MONGODB_URI, { useUnifiedTopology: true, useNewUrlParser: true })
+mongoose.connect(process.env.MONGO_URL, { useUnifiedTopology: true, useNewUrlParser: true })
   .then(() => {
     console.log(`Successfully connected to MongoDB`);
   })
@@ -14,3 +16,4 @@ mongoose.connect(MONGODB_URI, { useUnifiedTopology: true, useNewUrlParser: true 
 const db = mongoose.connection;
 
 module.exports = db;
+// MmRic8q8tqOX8R2T

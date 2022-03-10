@@ -80,14 +80,14 @@ async function getBand(req, res) {
   const updateBand =  (req, res) => {
     try {
       const { id } = req.params
-     Band.findByIdAndUpdate(id, req.body, { new: true }, (err, recipe) => {
+     Band.findByIdAndUpdate(id, req.body, { new: true }, (err, band) => {
        
         if (err !== null) {
           console.log(err, 'error')
           res.status(404).send(err.message)
         } else {
-          console.log(recipe)
-          res.json(recipe)
+          console.log(band)
+          res.json(band)
         }
       })
     } catch (error) {
@@ -98,14 +98,48 @@ async function getBand(req, res) {
   const updateAlbum =  (req, res) => {
     try {
       const { id } = req.params
-     Album.findByIdAndUpdate(id, req.body, { new: true }, (err, band) => {
+     Album.findByIdAndUpdate(id, req.body, { new: true }, (err, album) => {
        
         if (err !== null) {
           console.log(err, 'error')
           res.status(404).send(err.message)
         } else {
-          console.log(recipe)
-          res.json(recipe)
+          console.log(album)
+          res.json(album)
+        }
+      })
+    } catch (error) {
+     return  res.status(500).send(error.message)
+    }
+  }
+  const updateSong =  (req, res) => {
+    try {
+      const { id } = req.params
+     Song.findByIdAndUpdate(id, req.body, { new: true }, (err, song) => {
+       
+        if (err !== null) {
+          console.log(err, 'error')
+          res.status(404).send(err.message)
+        } else {
+          console.log(song)
+          res.json(song)
+        }
+      })
+    } catch (error) {
+     return  res.status(500).send(error.message)
+    }
+  }
+  const updateMember =  (req, res) => {
+    try {
+      const { id } = req.params
+     Member.findByIdAndUpdate(id, req.body, { new: true }, (err, member) => {
+       
+        if (err !== null) {
+          console.log(err, 'error')
+          res.status(404).send(err.message)
+        } else {
+          console.log(member)
+          res.json(member)
         }
       })
     } catch (error) {
@@ -113,7 +147,7 @@ async function getBand(req, res) {
     }
   }
   
-  async function deleteById (req, res) {
+  async function deleteBandById (req, res) {
     try {
       const {_id} = await Band.findByIdAndDelete(req.params._id);
         return res.status(200).send(`deleted Band`);
@@ -121,7 +155,30 @@ async function getBand(req, res) {
       return res.status(500).send(error.message);
     }
   }
-
+  async function deleteByAlbumId (req, res) {
+    try {
+      const {_id} = await Album.findByIdAndDelete(req.params._id);
+        return res.status(200).send(`deleted Album`);
+    } catch (error) {
+      return res.status(500).send(error.message);
+    }
+  }
+  async function deleteBySongId (req, res) {
+    try {
+      const {_id} = await Song.findByIdAndDelete(req.params._id);
+        return res.status(200).send(`deleted Song`);
+    } catch (error) {
+      return res.status(500).send(error.message);
+    }
+  }
+  async function deleteByMemberId (req, res) {
+    try {
+      const {_id} = await Member.findByIdAndDelete(req.params._id);
+        return res.status(200).send(`deleted Members`);
+    } catch (error) {
+      return res.status(500).send(error.message);
+    }
+  }
   async function deleteAll(req, res) {
     try {
       const { name } = req.params;
@@ -141,13 +198,22 @@ async function getBand(req, res) {
     getAlbum,
     getSong,
     getMember,
+
     deleteAll,
+
     updateBand,
     updateAlbum,
+    updateSong,
+    updateMember,
+
     createBand,
     createSong,
     createAlbum,
     createMember,
-    deleteById
+
+    deleteBandById,
+    deleteByAlbumId,
+    deleteBySongId,
+    deleteByMemberId
    
   };
