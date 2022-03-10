@@ -55,3 +55,63 @@ You should be able to run it locally on postman
 3. DELETE  members: http://localhost:3000/Bands/member/:id
 4. DELETE  song: http://localhost:3000/Bands/song/:id
 
+
+Album Schema
+```
+const album = new Schema( {
+    name: { type: String, required: true },
+    released:{ type: String, required: true },
+    albums_sold:{type: String, required: true},
+    Label:{type: String, required: true },
+    song: {type: Schema.Types.ObjectId, ref: 'Songs'},
+    
+ },
+
+ {timestamps: true},
+ )
+```
+Band Schema
+
+```
+const Band = new Schema( {
+    name: { type: String, required: true },
+    Genre:{type: String, required: true},
+    year_formed:{type:String, required: true},
+    members:{type: Schema.Types.ObjectId, ref: 'Members'}, // referrence member.js
+    albums:{type: Schema.Types.ObjectId, ref: 'Albums'}, // reference album
+    total_albums_sold: {type: String, required: false}
+ },
+
+ {timestamps: true},
+ )
+```
+
+member Schema
+```
+const Members = new Schema( {
+    lead_singer: { type: String, required: true },
+    lead_guitar: { type: String, required: true },
+    rhythm_guitar:{ type: String, required: false },
+    bass_guitar:{type: String, required: true},
+    drums:{type: String, required: true},
+    keyboard:{type:String, required: false},
+    special_guest:{type:String, required: false} 
+ },
+
+ {timestamps: true},
+ )
+```
+
+Song Schema
+
+```
+const Song = new Schema( {
+    title: { type: String, required: true },
+    writer:{type: String, required: true}, 
+    runtime:{type:String, required: true},
+    singer:{type:String, required: true}
+},
+ {timestamps: true},
+)
+```
+
