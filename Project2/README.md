@@ -115,4 +115,4 @@ const Song = new Schema( {
 )
 ```
 ### Hosted on Heroku
-https://stark-sierra-47516.herokuapp.com/
+https://stark-sierra-47516.herokuapp.com/band
