@@ -1,4 +1,4 @@
-# :metal::musical_keyboard: The not so awesome Rock & Roll app :guitar::metal:
+# :metal::musical_keyboard: The not so awesome Rock & Roll database :guitar::metal:
 The not-so-awesome Rock & Roll app gives you a list of bands, their members, most popular album, the year it was formed , etc. There are only a few bands listed right now ,but you can always add on to it
 
 ## Installation
