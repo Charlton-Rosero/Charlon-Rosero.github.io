@@ -31,7 +31,7 @@ then start the server in your terminal using the command below
 ```bash
 npm start
 ```
-You shoul be able to run it locally on postman
+You should be able to run it locally on postman
 
 ### Endpoints for CRUD
 
