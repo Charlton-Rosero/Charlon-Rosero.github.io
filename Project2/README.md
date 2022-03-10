@@ -35,23 +35,23 @@ You shoul be able to run it locally on postman
 
 ### Endpoints for CRUD
 
-GET  band: http://localhost:3000/Bands/band
-GET  album: http://localhost:3000/Bands/album
-GET  members: http://localhost:3000/Bands/member
-GET  song: http://localhost:3000/Bands/song
+1. GET  band: http://localhost:3000/Bands/band
+2. GET  album: http://localhost:3000/Bands/album
+3. GET  members: http://localhost:3000/Bands/member
+4. GET  song: http://localhost:3000/Bands/song
 
-POST  band: http://localhost:3000/Bands/band
-POST  album: http://localhost:3000/Bands/album
-POST  members: http://localhost:3000/Bands/member
-POST  song: http://localhost:3000/Bands/song
+1. POST  band: http://localhost:3000/Bands/band
+2. POST  album: http://localhost:3000/Bands/album
+3. POST  members: http://localhost:3000/Bands/member
+4. POST  song: http://localhost:3000/Bands/song
 
-PUT  band: http://localhost:3000/Bands/band/:id
-PUT  album: http://localhost:3000/Bands/album/:id
-PUT  members: http://localhost:3000/Bands/member/:id
-PUT  song: http://localhost:3000/Bands/song/:id
+1. PUT  band: http://localhost:3000/Bands/band/:id
+2. PUT  album: http://localhost:3000/Bands/album/:id
+3. PUT  members: http://localhost:3000/Bands/member/:id
+4. PUT  song: http://localhost:3000/Bands/song/:id
 
-DELETE  band: http://localhost:3000/Bands/band/:id
-DELETE  album: http://localhost:3000/Bands/album/:id
-DELETE  members: http://localhost:3000/Bands/member/:id
-DELETE  song: http://localhost:3000/Bands/song/:id
+1. DELETE  band: http://localhost:3000/Bands/band/:id
+2. DELETE  album: http://localhost:3000/Bands/album/:id
+3. DELETE  members: http://localhost:3000/Bands/member/:id
+4. DELETE  song: http://localhost:3000/Bands/song/:id
 
